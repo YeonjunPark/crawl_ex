@@ -16,16 +16,15 @@ def main():
 
     for page in range(1, 10000):
         params = {
-            'field_resetype_value': 'All',
+            'field_resetype_value': 'E',
             'department': 'All',
-            'language': 'ko',
             'page': page,
+            'language': 'ko',
         }
 
         page_url = 'http://eng.snu.ac.kr/research'
         html = requests.get(page_url, params=params).text
         soup = BeautifulSoup(html, 'html.parser')
-        # print(soup.findAll("a"))
 
         for li_tag in soup.select('.item-list .research > li'):
             print(li_tag)
