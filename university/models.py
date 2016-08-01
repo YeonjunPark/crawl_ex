@@ -10,3 +10,6 @@ class Graduate_school(models.Model):
 
 class Quest(models.Model):
     name = models.CharField(max_length=100, null=True)
+
+class Title(models.Model):
+    title = models.CharField(max_length=100)
